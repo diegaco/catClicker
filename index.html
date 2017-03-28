@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Clicker</title>
+  <style>
+
+    body {
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    }
+
+    main {
+      overflow: hidden;
+      max-width: 900px;
+      margin: 60px auto;
+    }
+
+    .cat-content {
+      width: 60%;
+      min-height: 1px;
+      margin-right: 10%;
+      float: left;
+    }
+
+    main > aside {
+      float: left;
+      width: 30%;
+    }
+
+    aside > h4 {
+      border-bottom: 3px solid #eee;
+      padding-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #000;
+      padding-bottom: 10px;
+      margin-bottom: 60px;
+      border-bottom: 5px solid #eee;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .content > div {
+      margin-bottom: 20px;
+    }
+
+    figcaption {
+      font-size: 20px;
+      color: #cbcbcb;
+      font-weight: bold;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    .cat-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cat-list > li {
+      color: #000;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .cat-list > li:hover {
+      cursor: pointer;
+    }
+
+    .cat-list img {
+      max-width: 60px;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .content-default {
+      font-size: 24px;
+      color: #cbcbcb;
+      padding: 100px 0;
+      text-align: center;
+      opacity: .75;
+    }
+
+    .action-admin {
+      padding: 40px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      appare
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: .25rem;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      text-decoration: none;
+    }
+
+    .btn-link {
+      font-weight: 500;
+      color: #7952b3;
+      border-color: #7952b3;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #0275d8;
+      border-color: #0275d8;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      color: #fff;
+      background-color: #025aa5;
+      border-color: #01549b;
+    }
+
+
+    .btn-link:hover,
+    .btn-link:focus {
+      color: #fff;
+      background-color: #7952b3;
+      border-color: #7952b3;
+    }
+
+    .form-item {
+      display: block;
+      padding: 10px 0;
+      width: 100%;
+      font-size: 0;
+    }
+
+    .form-item > label {
+      display: block;
+      font-size: 14px;
+    }
+
+    .form-item > input {
+      display: inline-block;
+      font-size: 14px;
+      width: 100%;
+      line-height: 2;
+      padding: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1> Cat Clicker Project</h1>
+    <section class="cat-content">
+      <h2 class="content-default">
+        Selecciona un gato de la lista
+      </h2>
+      <div class="cat-entry">
+      </div>
+      <div class="action-admin hidden">
+        <a href="#" class="btn btn-link js-open-form">Edit Cat</a>
+        <div class="hidden admin-form-container">
+          <hr>
+          <form class="admin-form" action="index.html">
+            <div class="form-item">
+              <label for="name">
+                Name
+              </label>
+              <input type="text" name="name" id="name">
+            </div>
+            <div class="form-item">
+              <label for="imageUrl">
+                Image URL
+              </label>
+              <input type="text" name="imageUrl" id="imageUrl">
+            </div>
+            <div class="form-item">
+              <label for="click">
+                Name
+              </label>
+              <input type="text" name="click" id="click">
+            </div>
+            <hr>
+            <div class="form-actions">
+              <a href="#" class="btn btn-link btn-sm js-cancel-form">Cancel</a>
+              <input type="submit" name="submit" text="Save" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <aside>
+      <h4>
+        Cat Lists
+      </h4>
+      <ul class="cat-list">
+
+      </ul>
+      <script type="text/template" data-template="cats">
+        <li class="cat-list-item" data-id="{{id}}">
+          <img src="{{imageSrc}}" alt="">
+          {{name}}
+        </li>
+      </script>
+    </aside>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
