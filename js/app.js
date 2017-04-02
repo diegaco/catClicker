@@ -11,6 +11,7 @@
       nickNames: [
         'TabTab',
         'T-Bone',
+        'T-Bone2',
         'Mr. T',
         'Miyu',
         'Miau Miau'
