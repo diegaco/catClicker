@@ -79,7 +79,6 @@
     this.changeCurrentCat = function(data, ev) {
       self.currentCat(data);
     };
-
   };
 
   ko.applyBindings(new ViewModel());
