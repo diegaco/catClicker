@@ -180,56 +180,30 @@
   <main>
     <h1> Cat Clicker Project</h1>
     <section class="cat-content">
-      <h2 class="content-default">
-        Selecciona un gato de la lista
-      </h2>
-      <div class="cat-entry">
-      </div>
-      <div class="action-admin hidden">
-        <a href="#" class="btn btn-link js-open-form">Edit Cat</a>
-        <div class="hidden admin-form-container">
-          <hr>
-          <form class="admin-form" action="index.html">
-            <div class="form-item">
-              <label for="name">
-                Name
-              </label>
-              <input type="text" name="name" id="name">
-            </div>
-            <div class="form-item">
-              <label for="imageUrl">
-                Image URL
-              </label>
-              <input type="text" name="imageUrl" id="imageUrl">
-            </div>
-            <div class="form-item">
-              <label for="click">
-                Name
-              </label>
-              <input type="text" name="click" id="click">
-            </div>
-            <hr>
-            <div class="form-actions">
-              <a href="#" class="btn btn-link btn-sm js-cancel-form">Cancel</a>
-              <input type="submit" name="submit" text="Save" class="btn btn-primary">
-            </div>
-          </form>
+      <div class="cat-entry" data-bind="with:currentCat">
+        <h2 class="cat-name js-cat-name" data-bind="text: name">
+
+        </h2>
+        <div class="cat-age" data-bind="text: level">
+
         </div>
+        <div class="cat-count js-cat-count" data-bind="text: clickCount">
+
+        </div>
+        <img class="cat-image js-cat-image" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <h3>NickNames</h3>
+        <ul class="cat-nick-name" data-bind="foreach: nickName">
+          <li data-bind="text: $data">
+
+          </li>
+        </ul>
       </div>
     </section>
     <aside>
-      <h4>
-        Cat Lists
-      </h4>
-      <ul class="cat-list">
-
-      </ul>
-      <script type="text/template" data-template="cats">
-        <li class="cat-list-item" data-id="{{id}}">
-          <img src="{{imageSrc}}" alt="">
-          {{name}}
+      <ul class="cat-list" data-bind="foreach: catList">
+        <li data-bind="text: name, click: $parent.changeCurrentCat">
         </li>
-      </script>
+      </ul>
     </aside>
   </main>
   <script src="js/lib/knockout-3.4.2.js"></script>
